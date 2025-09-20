@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  Actividades
+
+  Created by win603 on 20/08/25.
+  
+*/
+
+"introduction" = "Hace mucho tiempo en una galaxia muy lejana";
+
+"story" = "Crónicas Galácticas
+
+Episodio I
+EL ASCENSO DE LAS SOMBRAS
+
+Una época de agitación envuelve los sistemas estelares.
+Flotas rebeldes, ocultas en el vacío cósmico,
+han asestado un golpe decisivo contra el opresivo Dominio.
+
+Perseguidos por los implacables agentes del Dominio,
+un grupo de héroes corre contra el tiempo para desbloquear
+el verdadero poder del artefacto
+antes de que la oscuridad consuma la galaxia...";
