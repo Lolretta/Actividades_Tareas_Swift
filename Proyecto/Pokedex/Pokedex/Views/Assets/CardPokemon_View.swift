@@ -22,7 +22,7 @@ struct Chip: View {
         }
         .padding(.horizontal, 8)
         .frame(height: 25)
-        .background(info.color.opacity(0.25))
+        .background(info.color)
         .overlay(
             RoundedRectangle(cornerRadius: 30)
                 .stroke(info.color, lineWidth: 1)
@@ -31,7 +31,7 @@ struct Chip: View {
     }
 }
 
-struct Card_View: View {
+struct CardPokemon_View: View {
     var img: String
     var name: String
     var tipo: [String]
@@ -69,6 +69,6 @@ struct Card_View: View {
 
 #Preview {
     VStack {
-        Card_View(img: "gengar", name: "Gengar", tipo: ["Veneno", "Fantasma"])
+        CardPokemon_View(img: "gengar", name: "Gengar", tipo: ["Veneno", "Fantasma"])
     }
 }

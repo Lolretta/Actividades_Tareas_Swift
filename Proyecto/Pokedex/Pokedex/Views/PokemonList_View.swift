@@ -9,18 +9,29 @@ import SwiftUI
 
 struct PokemonList_View: View {
     
-    @State var cardViewModel = PokemonViewModel().dummyData()
+    @State var pokemonViewModel = PokemonViewModel().dummyData()
     
     var body: some View {
         
-        ScrollView(.vertical){
-            VStack(alignment: .center){
-                ForEach(cardViewModel, id: \.uuid) { card in
-                    Card_View(
-                        img: card.image,
-                        name: card.name,
-                        tipo: card.tipo
-                    )
+        NavigationView {
+            ScrollView(.vertical){
+                VStack(alignment: .center){
+                    ForEach(pokemonViewModel, id: \.uuid) { card in
+                        
+                        let backColor: Color = card.tipo.first.flatMap { card_data[$0]?.color } ?? .gray
+                        
+                        NavigationLink(destination: PokemonDetail_View(
+                            background_color: backColor,
+                            pokemon: card
+                        )) {
+                            
+                            CardPokemon_View(
+                                img: card.image,
+                                name: card.name,
+                                tipo: card.tipo
+                            )
+                        }
+                    }
                 }
             }
         }

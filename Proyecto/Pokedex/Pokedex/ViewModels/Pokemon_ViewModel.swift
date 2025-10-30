@@ -12,7 +12,7 @@ struct PokemonViewModel{
     func dummyData() -> [Pokemon] {
         
         let pokemones: [Pokemon] = [
-            Pokemon(id: 1, image: "charmander", name: "Charmander", tipo: ["Fuego"], rareza: "Comun",
+            Pokemon(id: 1, image: "charmander", name: "Charmander", tipo: ["Fuego"], rareza: "Comun", altura: 0.6, peso: 8.5,
                     BaseStats: [Stats(hp: 39, attack: 52, defense: 43, specialAttack: 60, specialDefense: 50, speed: 65)],
                     MaxStats: [Stats(hp: 188, attack: 94, defense: 81, specialAttack: 112, specialDefense: 92, speed: 121)],
                     movs: [
@@ -32,7 +32,7 @@ struct PokemonViewModel{
                     ]
                    ),
             
-            Pokemon(id: 2, image: "squirtle", name: "Squirtle", tipo: ["Agua"], rareza: "Comun",
+            Pokemon(id: 2, image: "squirtle", name: "Squirtle", tipo: ["Agua"], rareza: "Comun", altura: 0.5, peso: 9.0,
                     BaseStats: [Stats(hp: 44, attack: 48, defense: 65, specialAttack: 50, specialDefense: 64, speed: 43)],
                     MaxStats: [Stats(hp: 198, attack: 90, defense: 121, specialAttack: 94, specialDefense: 119, speed: 81)],
                     movs:[
@@ -52,7 +52,7 @@ struct PokemonViewModel{
                     ]
                    ),
             
-            Pokemon(id: 3, image: "bulbasaur", name: "Bulbasaur", tipo: ["Planta", "Veneno"], rareza: "Comun",
+            Pokemon(id: 3, image: "bulbasaur", name: "Bulbasaur", tipo: ["Planta", "Veneno"], rareza: "Comun", altura: 0.7, peso: 6.9,
                     BaseStats: [Stats(hp: 45, attack: 49, defense: 49, specialAttack: 65, specialDefense: 65, speed: 45)],
                     MaxStats: [Stats(hp: 200, attack: 91, defense: 91, specialAttack: 121, specialDefense: 121, speed: 83)],
                     movs: [
@@ -71,7 +71,7 @@ struct PokemonViewModel{
                     ]
                    ),
             
-            Pokemon(id: 4, image: "pikachu", name: "Pikachu", tipo: ["Eléctrico"], rareza: "Comun",
+            Pokemon(id: 4, image: "pikachu", name: "Pikachu", tipo: ["Eléctrico"], rareza: "Comun", altura: 0.4, peso: 6.0,
                     BaseStats: [Stats(hp: 35, attack: 55, defense: 40, specialAttack: 50, specialDefense: 50, speed: 90)],
                     MaxStats: [Stats(hp: 180, attack: 103, defense: 76, specialAttack: 94, specialDefense: 94, speed: 166)],
                     movs: [
@@ -92,7 +92,7 @@ struct PokemonViewModel{
                     ]
                    ),
             
-            Pokemon(id: 5, image: "mew", name: "Mew", tipo: ["Psíquico"], rareza: "Mitico",
+            Pokemon(id: 5, image: "mew", name: "Mew", tipo: ["Psíquico"], rareza: "Mitico", altura: 0.4, peso: 4.0,
                     BaseStats: [Stats(hp: 100, attack: 100, defense: 100, specialAttack: 100, specialDefense: 100, speed: 100)],
                     MaxStats: [Stats(hp: 310, attack: 236, defense: 236, specialAttack: 236, specialDefense: 236, speed: 236)],
                     movs: [
@@ -114,7 +114,7 @@ struct PokemonViewModel{
                     ]
                    ),
             
-            Pokemon(id: 6, image: "gengar", name: "Gengar", tipo: ["Fantasma", "Veneno"], rareza: "Poco comun",
+            Pokemon(id: 6, image: "gengar", name: "Gengar", tipo: ["Fantasma", "Veneno"], rareza: "Poco comun", altura: 1.5, peso: 40.5,
                     BaseStats: [Stats(hp: 60, attack: 65, defense: 60, specialAttack: 130, specialDefense: 75, speed: 110)],
                     MaxStats: [Stats(hp: 230, attack: 121, defense: 112, specialAttack: 238, specialDefense: 141, speed: 203)],
                     movs: [
@@ -136,7 +136,7 @@ struct PokemonViewModel{
                     ]
                    ),
             
-            Pokemon(id: 7, image: "lucario", name: "Lucario", tipo: ["Lucha", "Acero"], rareza: "Raro",
+            Pokemon(id: 7, image: "lucario", name: "Lucario", tipo: ["Lucha", "Acero"], rareza: "Raro", altura: 1.2, peso: 54.0,
                     BaseStats: [Stats(hp: 70, attack: 110, defense: 70, specialAttack: 115, specialDefense: 70, speed: 90)],
                     MaxStats: [Stats(hp: 250, attack: 202, defense: 130, specialAttack: 211, specialDefense: 130, speed: 166)],
                     movs: [

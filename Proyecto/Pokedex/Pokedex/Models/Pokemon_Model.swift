@@ -29,6 +29,8 @@ struct Pokemon: Identifiable {
     let name: String
     let tipo: [String]
     let rareza: String
+    let altura: Float
+    let peso: Float
     let BaseStats: [Stats]
     let MaxStats: [Stats]
     let movs: [String: Movs]
