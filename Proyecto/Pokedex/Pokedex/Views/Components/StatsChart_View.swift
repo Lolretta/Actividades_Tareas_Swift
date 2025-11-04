@@ -34,7 +34,7 @@ struct StatRowCompact: View {
             Text(String(format: "%03d", base))
                 .font(.caption2)
                 .frame(width: 36, alignment: .leading)
-                .foregroundColor(.primary.opacity(0.9))
+                .foregroundColor(.black)
 
             GeometryReader { g in
                 ZStack(alignment: .leading) {

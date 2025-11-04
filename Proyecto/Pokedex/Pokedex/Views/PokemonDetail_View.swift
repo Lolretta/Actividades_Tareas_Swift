@@ -34,8 +34,10 @@ struct PokemonDetail_View: View {
                 
                 VStack (spacing: 20) {
                     
-                    ForEach(pokemon.tipo, id: \.self) { t in
-                        Chip(tipo: t, info: card_data[t]!)
+                    HStack {
+                        ForEach(pokemon.tipo, id: \.self) { t in
+                            Chip(tipo: t, info: card_data[t]!)
+                        }
                     }
                     
                     Text("About").foregroundStyle(background_color).fontWeight(.bold)
@@ -43,23 +45,23 @@ struct PokemonDetail_View: View {
                     HStack (spacing: 50) {
                         VStack (spacing: 10) {
                             HStack {
-                                Image(systemName: "scalemass")
-                                Text(String(pokemon.peso) + " kg")
+                                Image(systemName: "scalemass").foregroundStyle(.black)
+                                Text(String(pokemon.peso) + " kg").foregroundStyle(.black)
                             }
-                            Text("Weight")
+                            Text("Weight").foregroundStyle(.black)
                         }
                         Divider()
                         VStack (spacing: 10) {
                             HStack {
-                                Image(systemName: "ruler").rotationEffect(.degrees(90))
-                                Text(String(pokemon.altura) + " m")
+                                Image(systemName: "ruler").rotationEffect(.degrees(90)).foregroundStyle(.black)
+                                Text(String(pokemon.altura) + " m").foregroundStyle(.black)
                             }
-                            Text("Height")
+                            Text("Height").foregroundStyle(.black)
                         }
                     }
                     .frame(height: 40)
                     
-                    Text("Pikachu that can generate powerful electricity have cheek sacs that are extra soft and super stretchy.").font(.caption)
+                    Text("Pikachu that can generate powerful electricity have cheek sacs that are extra soft and super stretchy.").font(.caption).foregroundStyle(.black)
                     
                     Text("Base Stats").foregroundStyle(background_color).fontWeight(.bold)
                     

@@ -52,6 +52,7 @@ struct CardPokemon_View: View {
                 .padding()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 
+                
                 // Chips de tipos
                 VStack() {
                     ForEach(tipo, id: \.self) { t in
