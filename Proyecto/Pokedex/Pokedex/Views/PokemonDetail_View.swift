@@ -9,6 +9,13 @@ import SwiftUI
 
 struct PokemonDetail_View: View {
     
+    let about: String = String(localized: "about")
+    let weight: String = String(localized: "weight")
+    let height: String = String(localized: "height")
+    let stats: String = String(localized: "stats")
+    
+    let info: String = String(localized: "info")
+    
     let background_color: Color
     let pokemon: Pokemon
     
@@ -49,7 +56,7 @@ struct PokemonDetail_View: View {
                         }
                     }
                     
-                    Text("About").foregroundStyle(background_color).fontWeight(.bold)
+                    Text(about).foregroundStyle(background_color).fontWeight(.bold)
                     
                     HStack (spacing: 50) {
                         VStack (spacing: 10) {
@@ -57,7 +64,7 @@ struct PokemonDetail_View: View {
                                 Image(systemName: "scalemass").foregroundStyle(.black)
                                 Text(String(pokemon.peso) + " kg").foregroundStyle(.black)
                             }
-                            Text("Weight").foregroundStyle(.black)
+                            Text(weight).foregroundStyle(.black)
                         }
                         Divider()
                         VStack (spacing: 10) {
@@ -65,12 +72,14 @@ struct PokemonDetail_View: View {
                                 Image(systemName: "ruler").rotationEffect(.degrees(90)).foregroundStyle(.black)
                                 Text(String(pokemon.altura) + " m").foregroundStyle(.black)
                             }
-                            Text("Height").foregroundStyle(.black)
+                            Text(height).foregroundStyle(.black)
                         }
                     }
                     .frame(height: 40)
                     
-                    Text("Base Stats").foregroundStyle(background_color).fontWeight(.bold)
+                    Text(info).font(.caption).foregroundStyle(.black)
+                    
+                    Text(stats).foregroundStyle(background_color).fontWeight(.bold)
                     
                     StatsOnlyView(base: base, max: maxs, color: background_color, perRowDelay: 0.06)
                     

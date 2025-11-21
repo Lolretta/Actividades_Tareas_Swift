@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  Pokedex
+
+  Created by Lolretta on 21/11/25.
+  
+*/
+
+"about" = "About";
+"weight" = "Weight";
+"height" = "Height";
+"stats" = "Base Stats";
+
+"info" = "This is the short description about the pokemon, he is cool";
+
+"all" = "All";
+"favs" = "Favorites";

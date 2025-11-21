@@ -9,6 +9,9 @@ import SwiftUI
 
 struct MainTabView: View {
     
+    let all: String = String(localized: "all")
+    let favs: String = String(localized: "favs")
+    
     @StateObject private var viewModel = PokemonViewModel()
     
     var body: some View {
@@ -16,13 +19,13 @@ struct MainTabView: View {
             PokemonList_View(viewModel: viewModel)
                 .tabItem {
                     Image(systemName: "list.bullet")
-                    Text("Todos")
+                    Text(all)
                 }
             
             FavoritesList_View(viewModel: viewModel)
                 .tabItem {
                     Image(systemName: "star.fill")
-                    Text("Favoritos")
+                    Text(favs)
                 }
         }
     }

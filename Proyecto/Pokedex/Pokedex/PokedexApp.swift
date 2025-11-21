@@ -12,6 +12,7 @@ struct PokedexApp: App {
     var body: some Scene {
         WindowGroup {
             MainTabView()
+                .environment(\.locale, .init(identifier: "es"))
         }
     }
 }
