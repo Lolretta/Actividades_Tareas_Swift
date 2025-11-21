@@ -16,6 +16,18 @@ struct Stats: Codable {
     let speed: Int
 }
 
+extension Stats {
+    static let maxStatsGlobal = Stats(
+        hp: 300,
+        attack: 300,
+        defense: 300,
+        specialAttack: 300,
+        specialDefense: 300,
+        speed: 300
+    )
+}
+
+
 struct Movs: Codable {
     let type: String
     let power: Int
