@@ -6,160 +6,248 @@
 //
 
 import Foundation
+import SwiftUI
 
-struct PokemonViewModel{
+@MainActor
+class PokemonViewModel: ObservableObject {
     
-    func dummyData() -> [Pokemon] {
-        
-        let pokemones: [Pokemon] = [
-            Pokemon(id: 1, image: "charmander", name: "Charmander", tipo: ["Fuego"], rareza: "Comun", altura: 0.6, peso: 8.5,
-                    BaseStats: [Stats(hp: 39, attack: 52, defense: 43, specialAttack: 60, specialDefense: 50, speed: 65)],
-                    MaxStats: [Stats(hp: 188, attack: 94, defense: 81, specialAttack: 112, specialDefense: 92, speed: 121)],
-                    movs: [
-                        "Araniazo": Movs(type: "Normal", power: 40, accuracy: 100),
-                        "Grunido": Movs(type: "Normal", power: 0, accuracy: 100),
-                        "Ascuas": Movs(type: "Fuego", power: 40, accuracy: 100),
-                        "Foco Energia": Movs(type: "Normal", power: 0, accuracy: 0),
-                        "Cola Ferrea": Movs(type: "Acero", power: 100, accuracy: 75),
-                        "Garra Dragon": Movs(type: "Dragón", power: 80, accuracy: 100),
-                        "Lanzallamas": Movs(type: "Fuego", power: 90, accuracy: 100),
-                        "Ataque Ala": Movs(type: "Volador", power: 60, accuracy: 100),
-                        "Danza Espada": Movs(type: "Normal", power: 0, accuracy: 0),
-                        "Giro Fuego": Movs(type: "Fuego", power: 35, accuracy: 85),
-                        "Nitrocarga": Movs(type: "Fuego", power: 50, accuracy: 100),
-                        "Punio Fuego": Movs(type: "Fuego", power: 75, accuracy: 100),
-                        "Llamarada": Movs(type: "Fuego", power: 110, accuracy: 85)
-                    ]
-                   ),
-            
-            Pokemon(id: 2, image: "squirtle", name: "Squirtle", tipo: ["Agua"], rareza: "Comun", altura: 0.5, peso: 9.0,
-                    BaseStats: [Stats(hp: 44, attack: 48, defense: 65, specialAttack: 50, specialDefense: 64, speed: 43)],
-                    MaxStats: [Stats(hp: 198, attack: 90, defense: 121, specialAttack: 94, specialDefense: 119, speed: 81)],
-                    movs:[
-                        "Placaje": Movs(type: "Normal", power: 40, accuracy: 100),
-                        "Latigo": Movs(type: "Normal", power: 0, accuracy: 100),
-                        "Pistola Agua": Movs(type: "Agua", power: 40, accuracy: 100),
-                        "Burbuja": Movs(type: "Agua", power: 40, accuracy: 100),
-                        "Mordisco": Movs(type: "Siniestro", power: 60, accuracy: 100),
-                        "Proteccion": Movs(type: "Normal", power: 0, accuracy: 0),
-                        "Cabezazo": Movs(type: "Normal", power: 70, accuracy: 100),
-                        "Giro Rapido": Movs(type: "Normal", power: 50, accuracy: 100),
-                        "Refugio": Movs(type: "Agua", power: 0, accuracy: 0),
-                        "Hidropulso": Movs(type: "Agua", power: 60, accuracy: 100),
-                        "Defensa Ferrea": Movs(type: "Acero", power: 0, accuracy: 0),
-                        "Acua Jet": Movs(type: "Agua", power: 40, accuracy: 100),
-                        "Hidrobomba": Movs(type: "Agua", power: 110, accuracy: 80)
-                    ]
-                   ),
-            
-            Pokemon(id: 3, image: "bulbasaur", name: "Bulbasaur", tipo: ["Planta", "Veneno"], rareza: "Comun", altura: 0.7, peso: 6.9,
-                    BaseStats: [Stats(hp: 45, attack: 49, defense: 49, specialAttack: 65, specialDefense: 65, speed: 45)],
-                    MaxStats: [Stats(hp: 200, attack: 91, defense: 91, specialAttack: 121, specialDefense: 121, speed: 83)],
-                    movs: [
-                        "Placaje": Movs(type: "Normal", power: 40, accuracy: 100),
-                        "Gruñido": Movs(type: "Normal", power: 0, accuracy: 100),
-                        "Látigo Cepa": Movs(type: "Planta", power: 45, accuracy: 100),
-                        "Somnífero": Movs(type: "Planta", power: 0, accuracy: 75),
-                        "Drenadoras": Movs(type: "Planta", power: 0, accuracy: 90),
-                        "Hoja Afilada": Movs(type: "Planta", power: 55, accuracy: 95),
-                        "Polvo Veneno": Movs(type: "Veneno", power: 0, accuracy: 75),
-                        "Bomba Lodo": Movs(type: "Veneno", power: 90, accuracy: 100),
-                        "Síntesis": Movs(type: "Planta", power: 0, accuracy: 0),
-                        "Gigadrenado": Movs(type: "Planta", power: 75, accuracy: 100),
-                        "Rayo Solar": Movs(type: "Planta", power: 120, accuracy: 100),
-                        "Beso Drenaje": Movs(type: "Hada", power: 50, accuracy: 100)
-                    ]
-                   ),
-            
-            Pokemon(id: 4, image: "pikachu", name: "Pikachu", tipo: ["Eléctrico"], rareza: "Comun", altura: 0.4, peso: 6.0,
-                    BaseStats: [Stats(hp: 35, attack: 55, defense: 40, specialAttack: 50, specialDefense: 50, speed: 90)],
-                    MaxStats: [Stats(hp: 180, attack: 103, defense: 76, specialAttack: 94, specialDefense: 94, speed: 166)],
-                    movs: [
-                        "Impactrueno": Movs(type: "Eléctrico", power: 40, accuracy: 100),
-                        "Gruñido": Movs(type: "Normal", power: 0, accuracy: 100),
-                        "Ataque Rápido": Movs(type: "Normal", power: 40, accuracy: 100),
-                        "Chispa": Movs(type: "Eléctrico", power: 65, accuracy: 100),
-                        "Rayo": Movs(type: "Eléctrico", power: 90, accuracy: 100),
-                        "Onda Trueno": Movs(type: "Eléctrico", power: 0, accuracy: 90),
-                        "Puño Trueno": Movs(type: "Eléctrico", power: 75, accuracy: 100),
-                        "Cola Férrea": Movs(type: "Acero", power: 100, accuracy: 75),
-                        "Doble Equipo": Movs(type: "Normal", power: 0, accuracy: 0),
-                        "Rayo Carga": Movs(type: "Eléctrico", power: 50, accuracy: 90),
-                        "Chispazo": Movs(type: "Eléctrico", power: 80, accuracy: 100),
-                        "Placaje Eléctrico": Movs(type: "Eléctrico", power: 120, accuracy: 100),
-                        "Voltiocambio": Movs(type: "Eléctrico", power: 70, accuracy: 100),
-                        "Trueno": Movs(type: "Eléctrico", power: 110, accuracy: 70)
-                    ]
-                   ),
-            
-            Pokemon(id: 5, image: "mew", name: "Mew", tipo: ["Psíquico"], rareza: "Mitico", altura: 0.4, peso: 4.0,
-                    BaseStats: [Stats(hp: 100, attack: 100, defense: 100, specialAttack: 100, specialDefense: 100, speed: 100)],
-                    MaxStats: [Stats(hp: 310, attack: 236, defense: 236, specialAttack: 236, specialDefense: 236, speed: 236)],
-                    movs: [
-                        "Confusión": Movs(type: "Psíquico", power: 50, accuracy: 100),
-                        "Viento Cortante": Movs(type: "Volador", power: 60, accuracy: 95),
-                        "Rayo Hielo": Movs(type: "Hielo", power: 90, accuracy: 100),
-                        "Rayo": Movs(type: "Eléctrico", power: 90, accuracy: 100),
-                        "Llamarada": Movs(type: "Fuego", power: 110, accuracy: 85),
-                        "Psíquico": Movs(type: "Psíquico", power: 90, accuracy: 100),
-                        "Bola Sombra": Movs(type: "Fantasma", power: 80, accuracy: 100),
-                        "Poder Oculto": Movs(type: "Normal", power: 60, accuracy: 100),
-                        "Puño Fuego": Movs(type: "Fuego", power: 75, accuracy: 100),
-                        "Puño Hielo": Movs(type: "Hielo", power: 75, accuracy: 100),
-                        "Puño Trueno": Movs(type: "Eléctrico", power: 75, accuracy: 100),
-                        "Descanso": Movs(type: "Psíquico", power: 0, accuracy: 0),
-                        "Refugio": Movs(type: "Normal", power: 0, accuracy: 0),
-                        "Pulso Umbrío": Movs(type: "Siniestro", power: 80, accuracy: 100),
-                        "Explosión": Movs(type: "Normal", power: 250, accuracy: 100)
-                    ]
-                   ),
-            
-            Pokemon(id: 6, image: "gengar", name: "Gengar", tipo: ["Fantasma", "Veneno"], rareza: "Poco comun", altura: 1.5, peso: 40.5,
-                    BaseStats: [Stats(hp: 60, attack: 65, defense: 60, specialAttack: 130, specialDefense: 75, speed: 110)],
-                    MaxStats: [Stats(hp: 230, attack: 121, defense: 112, specialAttack: 238, specialDefense: 141, speed: 203)],
-                    movs: [
-                        "Lengüetazo": Movs(type: "Fantasma", power: 30, accuracy: 100),
-                        "Hipnosis": Movs(type: "Psíquico", power: 0, accuracy: 60),
-                        "Tinieblas": Movs(type: "Fantasma", power: 0, accuracy: 100),
-                        "Puño Sombra": Movs(type: "Fantasma", power: 60, accuracy: 100),
-                        "Come Sueños": Movs(type: "Psíquico", power: 100, accuracy: 100),
-                        "Bola Sombra": Movs(type: "Fantasma", power: 80, accuracy: 100),
-                        "Psíquico": Movs(type: "Psíquico", power: 90, accuracy: 100),
-                        "Bomba Lodo": Movs(type: "Veneno", power: 90, accuracy: 100),
-                        "Onda Tóxica": Movs(type: "Veneno", power: 95, accuracy: 100),
-                        "Rayo": Movs(type: "Eléctrico", power: 90, accuracy: 100),
-                        "Rayo Hielo": Movs(type: "Hielo", power: 90, accuracy: 100),
-                        "Foco Energía": Movs(type: "Normal", power: 0, accuracy: 0),
-                        "Sustituto": Movs(type: "Normal", power: 0, accuracy: 0),
-                        "Pulso Umbrío": Movs(type: "Siniestro", power: 80, accuracy: 100),
-                        "Explosión": Movs(type: "Normal", power: 250, accuracy: 100)
-                    ]
-                   ),
-            
-            Pokemon(id: 7, image: "lucario", name: "Lucario", tipo: ["Lucha", "Acero"], rareza: "Raro", altura: 1.2, peso: 54.0,
-                    BaseStats: [Stats(hp: 70, attack: 110, defense: 70, specialAttack: 115, specialDefense: 70, speed: 90)],
-                    MaxStats: [Stats(hp: 250, attack: 202, defense: 130, specialAttack: 211, specialDefense: 130, speed: 166)],
-                    movs: [
-                        "Puño Meteoro": Movs(type: "Acero", power: 90, accuracy: 90),
-                        "A Bocajarro": Movs(type: "Lucha", power: 120, accuracy: 100),
-                        "Ataque Óseo": Movs(type: "Tierra", power: 25, accuracy: 90),
-                        "Esfera Aural": Movs(type: "Lucha", power: 80, accuracy: 100),
-                        "Pulso Umbrío": Movs(type: "Siniestro", power: 80, accuracy: 100),
-                        "Pulso Dragón": Movs(type: "Dragón", power: 85, accuracy: 100),
-                        "Velocidad Extrema": Movs(type: "Normal", power: 80, accuracy: 100),
-                        "Puño Incremento": Movs(type: "Lucha", power: 40, accuracy: 100),
-                        "Puño Trueno": Movs(type: "Eléctrico", power: 75, accuracy: 100),
-                        "Puño Hielo": Movs(type: "Hielo", power: 75, accuracy: 100),
-                        "Puño Fuego": Movs(type: "Fuego", power: 75, accuracy: 100),
-                        "Colmillo Ígneo": Movs(type: "Fuego", power: 65, accuracy: 95),
-                        "Tajo Umbrío": Movs(type: "Siniestro", power: 70, accuracy: 100),
-                        "Cabeza de Hierro": Movs(type: "Acero", power: 80, accuracy: 100),
-                        "Danza Espada": Movs(type: "Normal", power: 0, accuracy: 0),
-                        "Pulso Aura": Movs(type: "Lucha", power: 80, accuracy: 100)
-                    ]
-                   )
-        ]
-        
-        return pokemones
+    @Published var pokemons: [Pokemon] = []
+    @Published var searchResults: [Pokemon] = []
+    
+    @Published var favoriteIDs: Set<Int> = []
+    private let favoritesKey = "favoritePokemonIDs"
+    
+    private let service = PokeAPIService.shared
+    private var allPokemonEntries: [PokeAPIService.PokemonListItem] = []
+    
+    init() {
+        loadFavorites()
     }
+    
+    func isFavorite(_ pokemon: Pokemon) -> Bool {
+        favoriteIDs.contains(pokemon.id)
+    }
+    
+    func toggleFavorite(for pokemon: Pokemon) {
+        if favoriteIDs.contains(pokemon.id) {
+            favoriteIDs.remove(pokemon.id)
+        } else {
+            favoriteIDs.insert(pokemon.id)
+            
+            if !pokemons.contains(where: { $0.id == pokemon.id }) {
+                pokemons.append(pokemon)
+            }
+        }
+        saveFavorites()
+    }
+    
+    var favoritePokemons: [Pokemon] {
+        pokemons.filter { favoriteIDs.contains($0.id) }
+    }
+    
+    func loadInitialPokemons() async {
+        let language = currentAppLanguage()
+        
+        let baseIds = [1, 4, 7, 25, 447, 151]
+        let ids = Array(Set(baseIds).union(favoriteIDs))
+        
+        var loaded: [Pokemon] = []
+        
+        for id in ids {
+            do {
+                let apiPokemon = try await service.fetchPokemon(id: id)
+                let species = try await service.fetchPokemonSpecies(id: id)
+                
+                let pokemon = try await mapAPIPokemonToPokemon(
+                    apiPokemon: apiPokemon,
+                    species: species,
+                    language: language
+                )
+                
+                loaded.append(pokemon)
+            } catch {
+                print("Error al cargar el pokemon \(id): \(error)")
+            }
+        }
+        
+        self.pokemons = loaded
+        
+        do {
+            self.allPokemonEntries = try await service.fetchAllPokemonList()
+        } catch {
+            print("Error al cargar la lista completa de pokémon: \(error)")
+        }
+    }
+    
+    func searchPokemons(by prefix: String) async {
+        let text = prefix
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+            .lowercased()
+        
+        if text.isEmpty {
+            await MainActor.run {
+                self.searchResults = []
+            }
+            return
+        }
+        
+        if allPokemonEntries.isEmpty {
+            do {
+                allPokemonEntries = try await service.fetchAllPokemonList()
+            } catch {
+                print("Error al cargar la lista completa en search: \(error)")
+            }
+        }
+        
+        let matchingEntries = allPokemonEntries.filter { entry in
+            entry.name.lowercased().hasPrefix(text)      // prefijo, no "contiene"
+        }
+        
+        let limitedEntries = Array(matchingEntries.prefix(20))
+        
+        let language = currentAppLanguage()
+        var results: [Pokemon] = []
+        
+        for entry in limitedEntries {
+            guard let id = pokemonID(from: entry.url) else { continue }
+            
+            do {
+                let apiPokemon = try await service.fetchPokemon(id: id)
+                let species = try await service.fetchPokemonSpecies(id: id)
+                
+                let pokemon = try await mapAPIPokemonToPokemon(
+                    apiPokemon: apiPokemon,
+                    species: species,
+                    language: language
+                )
+                
+                results.append(pokemon)
+            } catch {
+                print("Error al cargar pokemon \(entry.name): \(error)")
+            }
+        }
+        
+        await MainActor.run {
+            self.searchResults = results
+        }
+    }
+    
+    private func mapAPIPokemonToPokemon(
+        apiPokemon: PokeAPIService.APIPokemon,
+        species: PokeAPIService.APIPokemonSpecies,
+        language: AppLanguage
+    ) async throws -> Pokemon {
+        
+        let nombre = localizedPokemonName(
+            species: species,
+            apiPokemon: apiPokemon,
+            language: language
+        )
+        
+        let tipos = apiPokemon.types.map { entry in
+            localizedTypeName(from: entry.type.name, language: language)
+        }
+        
+        let altura = Float(apiPokemon.height) / 10.0
+        let peso = Float(apiPokemon.weight) / 10.0
+        let rareza: String
+        if species.is_legendary {
+            rareza = (language == .spanish) ? "Legendario" : "Legendary"
+        } else if species.is_mythical {
+            rareza = (language == .spanish) ? "Mitico" : "Mythical"
+        } else {
+            rareza = (language == .spanish) ? "Comun" : "Common"
+        }
+        
+        let baseStats = mapStats(from: apiPokemon.stats)
+        let movesToLoad = Array(apiPokemon.moves.prefix(6))
+        var movsDict: [String: Movs] = [:]
+        
+        for entry in movesToLoad {
+            do {
+                let apiMove = try await service.fetchMove(byName: entry.move.name)
+                let moveName = localizedMoveName(from: apiMove, language: language)
+                let moveData = mapAPIMoveToMovs(apiMove, language: language)
+                
+                movsDict[moveName] = moveData
+            } catch {
+                print("Error al cargar el movimiento \(entry.move.name): \(error)")
+            }
+        }
+        
+        let spriteURL = apiPokemon.sprites.other?.officialArtwork?.front_default ?? apiPokemon.sprites.front_default ?? ""
+        
+        return Pokemon(
+            id: apiPokemon.id,
+            image: spriteURL,
+            name: nombre,
+            tipo: tipos,
+            rareza: rareza,
+            altura: altura,
+            peso: peso,
+            BaseStats: [baseStats],
+            MaxStats: [Stats.maxStatsGlobal],
+            movs: movsDict
+        )
+    }
+    
+    private func mapStats(
+        from apiStats: [PokeAPIService.APIPokemon.APIStat]
+    ) -> Stats {
+        var hp = 0
+        var attack = 0
+        var defense = 0
+        var specialAttack = 0
+        var specialDefense = 0
+        var speed = 0
+        
+        for stat in apiStats {
+            switch stat.stat.name {
+            case "hp":
+                hp = stat.base_stat
+            case "attack":
+                attack = stat.base_stat
+            case "defense":
+                defense = stat.base_stat
+            case "special-attack":
+                specialAttack = stat.base_stat
+            case "special-defense":
+                specialDefense = stat.base_stat
+            case "speed":
+                speed = stat.base_stat
+            default:
+                break
+            }
+        }
+        
+        return Stats(
+            hp: hp,
+            attack: attack,
+            defense: defense,
+            specialAttack: specialAttack,
+            specialDefense: specialDefense,
+            speed: speed
+        )
+    }
+    
+    private func pokemonID(from url: String) -> Int? {
+        let trimmed = url.trimmingCharacters(in: CharacterSet(charactersIn: "/"))
+        let parts = trimmed.split(separator: "/")
+        if let last = parts.last, let id = Int(last) {
+            return id
+        }
+        return nil
+    }
+    
+    private func loadFavorites() {
+        if let saved = UserDefaults.standard.array(forKey: favoritesKey) as? [Int] {
+            favoriteIDs = Set(saved)
+        }
+    }
+    
+    private func saveFavorites() {
+        let array = Array(favoriteIDs)
+        UserDefaults.standard.set(array, forKey: favoritesKey)
+    }
+    
 }
